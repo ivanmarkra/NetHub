@@ -1,9 +1,28 @@
 CREATE TABLE USER (
 name text,
-userID integer,
+userID integer PRIMARY KEY autoincrement,
 DOJ date,
 payment text,
 exDate DATE,
 age integer,
 subs text
 );
+
+
+CREATE TABLE MOVIE (
+MovieID text not null,
+name text,
+lang text,
+rating real,
+category text,
+DOUP DATE,
+director text,
+capt integer,
+PRIMARY KEY(`MovieID`)
+);
+
+
+
+
+
+
