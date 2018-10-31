@@ -21,7 +21,18 @@ capt integer,
 PRIMARY KEY(`MovieID`)
 );
 
-
+CREATE TABLE SERIE (
+SerieID text not null,
+name text,
+NBseason integer,
+lang text,
+rating real,
+category text,
+DOUP DATE,
+director text,
+capt integer,
+PRIMARY KEY(`SerieID`)
+);
 
 
 
