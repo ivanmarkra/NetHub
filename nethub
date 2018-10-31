@@ -35,5 +35,32 @@ PRIMARY KEY(`SerieID`)
 );
 
 
+CREATE TABLE Episode (
+epID text PRIMARY KEY, 
+serieID text NOT NULL,
+epName text NOT NULL,
+rating real DEFAULT 0,
+seasonNr integer,
+doup date,
+FOREIGN KEY(serieID) REFERENCES SERIE(SerieID)
+);
+
+CREATE TABLE History (
+userID integer,
+progID text,
+epID text DEFAULT "N/A",
+FOREIGN KEY(epID) REFERENCES Episode(epID)
+);
+
+CREATE TABLE Subscription (
+userID integer,
+progID text,
+);
+
+CREATE TABLE Notifications (
+userID integer,
+message text
+);
+
 
 
