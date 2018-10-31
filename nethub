@@ -1,9 +1,9 @@
 CREATE TABLE USER (
-name text
-userID integer
-DOJ date
-payment text
-exDate DATE
-age integer
+name text,
+userID integer,
+DOJ date,
+payment text,
+exDate DATE,
+age integer,
 subs text
 );
