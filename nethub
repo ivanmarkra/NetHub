@@ -1,0 +1,66 @@
+CREATE TABLE USER (
+name text,
+userID integer PRIMARY KEY autoincrement,
+DOJ date,
+payment text,
+exDate DATE,
+age integer,
+subs text
+);
+
+
+CREATE TABLE MOVIE (
+MovieID text not null,
+name text,
+lang text,
+rating real,
+category text,
+DOUP DATE,
+director text,
+capt integer,
+PRIMARY KEY(`MovieID`)
+);
+
+CREATE TABLE SERIE (
+SerieID text not null,
+name text,
+NBseason integer,
+lang text,
+rating real,
+category text,
+DOUP DATE,
+director text,
+capt integer,
+PRIMARY KEY(`SerieID`)
+);
+
+
+CREATE TABLE Episode (
+epID text PRIMARY KEY, 
+serieID text NOT NULL,
+epName text NOT NULL,
+rating real DEFAULT 0,
+seasonNr integer,
+doup date,
+FOREIGN KEY(serieID) REFERENCES SERIE(SerieID)
+);
+
+CREATE TABLE History (
+userID integer,
+progID text,
+epID text DEFAULT "N/A",
+FOREIGN KEY(epID) REFERENCES Episode(epID)
+);
+
+CREATE TABLE Subscription (
+userID integer,
+progID text,
+);
+
+CREATE TABLE Notifications (
+userID integer,
+message text
+);
+
+
+
