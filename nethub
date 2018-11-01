@@ -45,11 +45,15 @@ doup date,
 FOREIGN KEY(serieID) REFERENCES SERIE(SerieID)
 );
 
-CREATE TABLE History (
-userID integer,
-progID text,
-epID text DEFAULT "N/A",
-FOREIGN KEY(epID) REFERENCES Episode(epID)
+DROP TABLE History;
+
+CREATE TABLE `History` (
+	`userID`	integer,
+	`progID`	text,
+	`epID`	text DEFAULT "N/A",
+	`userRating`	INTEGER DEFAULT 0,
+	FOREIGN KEY(`epID`) REFERENCES `Episode`(`epID`)
+	
 );
 
 CREATE TABLE Subscription (
