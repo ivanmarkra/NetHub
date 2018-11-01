@@ -54,7 +54,7 @@ FOREIGN KEY(epID) REFERENCES Episode(epID)
 
 CREATE TABLE Subscription (
 userID integer,
-progID text,
+progID text
 );
 
 CREATE TABLE Notifications (
