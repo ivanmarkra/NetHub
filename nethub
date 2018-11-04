@@ -69,13 +69,15 @@ message text
 
 
 
+// There must be a series subscription feature thatnotifies a user of new episodes
+    CREATE TRIGGER after_insert_on_Episode AFTER INSERT ON Episode
+    WHEN (NEW.serieID IN(SELECT serieID FROM Subscription))
+    BEGIN
+
+     INSERT INTO Notifications (userID,EpisodeName) SELECT userID,NEW.epName FROM Subscription WHERE NEW.serieID=serieID;
+    END;
 
 
-CREATE TRIGGER after_insert_on_Episode AFTER INSERT ON Episode
-WHEN (NEW.serieID IN(SELECT serieID FROM Subscription))
-BEGIN
- INSERT INTO Notifications (userID) SELECT userID FROM Subscription WHERE NEW.serieID=serieID;
-END;
 
 
 
