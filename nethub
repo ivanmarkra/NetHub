@@ -57,8 +57,9 @@ CREATE TABLE `History` (
 
 CREATE TABLE Subscription (
 userID integer,
-progID text,
+serieID text,
 FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
+FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
 );
 
 CREATE TABLE Notifications (
