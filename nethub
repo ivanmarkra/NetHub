@@ -62,9 +62,12 @@ FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
 FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
 );
 
-CREATE TABLE Notifications (
-userID integer,
-message text
+CREATE TABLE `Notifications` (
+	`userID`	integer,
+	`message`	text DEFAULT "NEW Episode",
+	`EpisodeName`	TEXT,
+	FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
+	FOREIGN KEY(`EpisodeName`) REFERENCES `Episode`(`epName`)
 );
 
 
