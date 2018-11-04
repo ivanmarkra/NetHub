@@ -13,7 +13,7 @@ CREATE TABLE `MOVIE` (
 	`MovieID`	text NOT NULL,
 	`name`	text,
 	`lang`	text,
-	`rating`	real default 0.0,
+	`rating`	real DEFAULT 0.0,
 	`category`	text,
 	`DOUP`	DATE,
 	`director`	text,
@@ -21,7 +21,6 @@ CREATE TABLE `MOVIE` (
 	`NBOfVotes`	INTEGER,
 	PRIMARY KEY(`MovieID`)
 );
-
 CREATE TABLE SERIE (
 SerieID text not null,
 name text,
@@ -36,21 +35,24 @@ PRIMARY KEY(`SerieID`)
 );
 
 
-CREATE TABLE Episode (
-epID text PRIMARY KEY, 
-serieID text NOT NULL,
-epName text NOT NULL,
-rating real DEFAULT 0,
-seasonNr integer,
-doup date,
-FOREIGN KEY(serieID) REFERENCES SERIE(SerieID)
+CREATE TABLE `Episode` (
+	`epID`	text,
+	`serieID`	text NOT NULL,
+	`epName`	text NOT NULL,
+	`rating`	real DEFAULT 0,
+	`seasonNr`	integer,
+	`doup`	date,
+	`NBOfVotes`	INTEGER,
+	FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`SerieID`),
+	PRIMARY KEY(`epID`)
 );
 
 CREATE TABLE `History` (
 	`userID`	integer,
 	`progID`	text,
 	`epID`	text DEFAULT "N/A",
-	`userRating`	INTEGER DEFAULT 0
+	`userRating`	INTEGER DEFAULT 0,
+	`NBOfVotes`	INTEGER
 );
 
 CREATE TABLE Subscription (
