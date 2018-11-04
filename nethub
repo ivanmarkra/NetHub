@@ -9,16 +9,17 @@ subs text
 );
 
 
-CREATE TABLE MOVIE (
-MovieID text not null,
-name text,
-lang text,
-rating real,
-category text,
-DOUP DATE,
-director text,
-capt integer,
-PRIMARY KEY(`MovieID`)
+CREATE TABLE `MOVIE` (
+	`MovieID`	text NOT NULL,
+	`name`	text,
+	`lang`	text,
+	`rating`	real default 0.0,
+	`category`	text,
+	`DOUP`	DATE,
+	`director`	text,
+	`capt`	integer,
+	`NBOfVotes`	INTEGER,
+	PRIMARY KEY(`MovieID`)
 );
 
 CREATE TABLE SERIE (
@@ -65,7 +66,7 @@ message text
 
 
 INSERT INTO SERIE VALUES('S-316','The first ',3,'Swedish',2,'Comedy',2017-08-20,'Hani',0);
-INSERT INTO MOVIE VALUES('M-122','The black hunter','Swedish',3,'Action',20-09-2017,'Hanna',0);
+INSERT INTO MOVIE VALUES('M-122','The black hunter','Swedish',0,'Action',20-09-2017,'Hanna',0,0);
 
 INSERT INTO Episode VALUES('1','S-316','The first try of inserting',3,2,2017-09-20);
 INSERT INTO History VALUES(3,'S-316','1',0);
