@@ -18,6 +18,7 @@ CREATE TABLE `MOVIE` (
 	`DOUP`	DATE,
 	`director`	text,
 	`capt`	integer,
+	`ageRating`	integer,
 	`NBOfVotes`	INTEGER,
 	PRIMARY KEY(`MovieID`)
 );
@@ -31,6 +32,7 @@ category text,
 DOUP DATE,
 director text,
 capt integer,
+ageRating integer,
 PRIMARY KEY(`SerieID`)
 );
 
