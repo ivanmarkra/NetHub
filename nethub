@@ -22,18 +22,17 @@ CREATE TABLE `MOVIE` (
 	`NBOfVotes`	INTEGER,
 	PRIMARY KEY(`MovieID`)
 );
-CREATE TABLE SERIE (
-SerieID text not null,
-name text,
-NBseason integer,
-lang text,
-rating real,
-category text,
-DOUP DATE,
-director text,
-capt integer,
-ageRating integer,
-PRIMARY KEY(`SerieID`)
+CREATE TABLE `SERIE` (
+	`SerieID`	text NOT NULL,
+	`name`	text NOT NULL,
+	`NBseason` integer NOT NULL,
+	`lang`	text NOT NULL,
+	`rating` real NOT NULL,
+	`category` text NOT NULL,
+	`DOUP`	text NOT NULL,
+	`director` text  NOT NULL,
+	`capt`	integer  NOT NULL,
+	PRIMARY KEY(`SerieID`)
 );
 
 
@@ -42,9 +41,9 @@ CREATE TABLE `Episode` (
 	`serieID`	text NOT NULL,
 	`epName`	text NOT NULL,
 	`rating`	real DEFAULT 0,
-	`seasonNr`	integer,
-	`doup`	date,
-	`NBOfVotes`	INTEGER,
+	`seasonNr`	integer NOT NULL,
+	`doup`	TEXT NOT NULL,
+	`NBOfVotes`	INTEGER NOT NULL,
 	FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`SerieID`),
 	PRIMARY KEY(`epID`)
 );
@@ -58,11 +57,11 @@ CREATE TABLE `History` (
 	`date`	TEXT
 );
 
-CREATE TABLE Subscription (
-userID integer,
-serieID text,
-FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
-FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
+CREATE TABLE `Subscription` (
+	`userID` integer NOT NULL,
+	`serieID` text NOT NULL,
+	FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`),
+	FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
 );
 
 CREATE TABLE `Notifications` (
@@ -71,6 +70,12 @@ CREATE TABLE `Notifications` (
 	`EpisodeName`	TEXT,
 	FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
 	FOREIGN KEY(`EpisodeName`) REFERENCES `Episode`(`epName`)
+);
+
+
+CREATE TABLE `actors` (
+	`progID`	TEXT NOT NULL,
+	`actorFullName`	TEXT NOT NULL
 );
 
 
