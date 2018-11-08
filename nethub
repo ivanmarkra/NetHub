@@ -74,6 +74,12 @@ CREATE TABLE `Notifications` (
 );
 
 
+CREATE TABLE `actors` (
+	`progID`	TEXT NOT NULL,
+	`actorFullName`	TEXT NOT NULL
+);
+
+
 
 // There must be a series subscription feature thatnotifies a user of new episodes
     CREATE TRIGGER after_insert_on_Episode AFTER INSERT ON Episode
