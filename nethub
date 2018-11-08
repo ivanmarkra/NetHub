@@ -57,11 +57,11 @@ CREATE TABLE `History` (
 	`date`	TEXT
 );
 
-CREATE TABLE Subscription (
-userID integer,
-serieID text,
-FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`)
-FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
+CREATE TABLE `Subscription` (
+	`userID` integer NOT NULL,
+	`serieID` text NOT NULL,
+	FOREIGN KEY(`userID`) REFERENCES `USER`(`userID`),
+	FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`serieID`)
 );
 
 CREATE TABLE `Notifications` (
