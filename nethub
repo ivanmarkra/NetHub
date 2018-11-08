@@ -22,18 +22,17 @@ CREATE TABLE `MOVIE` (
 	`NBOfVotes`	INTEGER,
 	PRIMARY KEY(`MovieID`)
 );
-CREATE TABLE SERIE (
-SerieID text not null,
-name text,
-NBseason integer,
-lang text,
-rating real,
-category text,
-DOUP DATE,
-director text,
-capt integer,
-ageRating integer,
-PRIMARY KEY(`SerieID`)
+CREATE TABLE `SERIE` (
+	`SerieID`	text NOT NULL,
+	`name`	text NOT NULL,
+	`NBseason` integer NOT NULL,
+	`lang`	text NOT NULL,
+	`rating` real NOT NULL,
+	`category` text NOT NULL,
+	`DOUP`	text NOT NULL,
+	`director` text  NOT NULL,
+	`capt`	integer  NOT NULL,
+	PRIMARY KEY(`SerieID`)
 );
 
 
