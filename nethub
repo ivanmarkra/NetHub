@@ -41,9 +41,9 @@ CREATE TABLE `Episode` (
 	`serieID`	text NOT NULL,
 	`epName`	text NOT NULL,
 	`rating`	real DEFAULT 0,
-	`seasonNr`	integer,
-	`doup`	date,
-	`NBOfVotes`	INTEGER,
+	`seasonNr`	integer NOT NULL,
+	`doup`	TEXT NOT NULL,
+	`NBOfVotes`	INTEGER NOT NULL,
 	FOREIGN KEY(`serieID`) REFERENCES `SERIE`(`SerieID`),
 	PRIMARY KEY(`epID`)
 );
